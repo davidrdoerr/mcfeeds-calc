@@ -16,6 +16,15 @@ Jolly Nature
 - Earthquake
 - Head Smash
 
+Roxanne-S3-Magcargo (Magcargo) @ Shuca Berry
+Level: 37
+Ability: Lava Shell
+Quiet Nature
+- Fire Spin
+- Rock Polish
+- Flamethrower
+- Power Gem
+
 Roxanne-S4-Carbink (Carbink) @ Rocky Helmet
 Level: 37
 Ability: Clear Body
