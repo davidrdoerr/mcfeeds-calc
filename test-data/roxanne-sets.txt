@@ -1,0 +1,98 @@
+Roxanne-S1-Probopass (Probopass) @ Red Card
+Level: 37
+Ability: Sturdy
+Lonely Nature
+- Stealth Rock
+- Volt Switch
+- Magnet Rise
+- Flash Cannon
+
+Roxanne-S2-Archeops (Archeops) @ Razor Beak
+Level: 37
+Ability: Rock Head
+Jolly Nature
+- Take Down
+- Wing Attack
+- Earthquake
+- Head Smash
+
+Roxanne-S4-Carbink (Carbink) @ Rocky Helmet
+Level: 37
+Ability: Clear Body
+Calm Nature
+- Toxic
+- Ancient Power
+- Explosion
+- Dazzling Gleam
+
+Roxanne-S5-Ursaring (Ursaring) @ Toxic Orb
+Level: 37
+Ability: Quick Feet
+Adamant Nature
+- Protect
+- Facade
+- Crunch
+- Metal Claw
+
+Roxanne-S6-Barbaracle (Barbaracle)
+Level: 38
+Ability: Tough Claws
+Adamant Nature
+- Bulk Up
+- Aqua Jet
+- Cross Chop
+- Stone Edge
+
+Roxanne-D1-Aerodactyl (Aerodactyl) @ Mental Herb
+Level: 37
+Ability: Unnerve
+Jolly Nature
+- Tailwind
+- Taunt
+- Rock Slide
+- Wing Attack
+
+Roxanne-D2-Tyranitar (Tyranitar) @ Tyranitarite
+Level: 38
+Ability: Solid Rock
+Bold Nature
+- Rock Slide
+- Stomping Tantrum
+- Pursuit
+- Dragon Claw
+
+Roxanne-D3-Rampardos (Rampardos) @ Lum Berry
+Level: 37
+Ability: Sheer Force
+Adamant Nature
+- Rock Slide
+- Zen Headbutt
+- Crunch
+- Rock Polish
+
+Roxanne-D4-Magcargo (Magcargo) @ Sitrus Berry
+Level: 38
+Ability: Lava Shell
+Bold Nature
+- Will-O-Wisp
+- Recover
+- Heat Wave
+- Power Gem
+
+Roxanne-D5-Garganacl (Garganacl) @ Leftovers
+Level: 37
+Ability: Purifying Salt
+Impish Nature
+- Body Press
+- Recover
+- Rock Tomb
+- Protect
+
+Roxanne-D6-Flygon (Flygon) @ Silver Powder
+Level: 37
+Ability: Sand Force
+Careful Nature
+- Bug Bite
+- Dragon Claw
+- Bug Buzz
+- Vacuum Wave
