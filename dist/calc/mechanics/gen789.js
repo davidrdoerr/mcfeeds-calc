@@ -175,9 +175,25 @@ function calculateSMSSSV(gen, attacker, defender, move, field) {
     var type2Effectiveness = defender.types[1]
         ? (0, util_2.getMoveEffectiveness)(gen, move, defender.types[1], isGhostRevealed, field.isGravity, isRingTarget)
         : 1;
+    if (attacker.hasAbility('Lava Shell') && move.hasType('Fire')) {
+        if (defender.types[0] === 'Water' || defender.types[0] === 'Rock') {
+            type1Effectiveness = 2;
+        }
+        if (defender.types[1] === 'Water' ||
+            defender.types[1] === 'Rock') {
+            type2Effectiveness = 2;
+        }
+    }
     var typeEffectiveness = type1Effectiveness * type2Effectiveness;
     if (defender.teraType) {
-        typeEffectiveness = (0, util_2.getMoveEffectiveness)(gen, move, defender.teraType, isGhostRevealed, field.isGravity, isRingTarget);
+        if (attacker.hasAbility('Lava Shell') &&
+            move.hasType('Fire') &&
+            (defender.teraType === 'Water' || defender.teraType === 'Rock')) {
+            typeEffectiveness = 2;
+        }
+        else {
+            typeEffectiveness = (0, util_2.getMoveEffectiveness)(gen, move, defender.teraType, isGhostRevealed, field.isGravity, isRingTarget);
+        }
     }
     if (typeEffectiveness === 0 && move.hasType('Ground') &&
         defender.hasItem('Iron Ball') && !defender.hasAbility('Klutz')) {
@@ -212,7 +228,7 @@ function calculateSMSSSV(gen, attacker, defender, move, field) {
     if ((defender.hasAbility('Wonder Guard') && typeEffectiveness <= 1) ||
         (move.hasType('Grass') && defender.hasAbility('Sap Sipper')) ||
         (move.hasType('Fire') && defender.hasAbility('Flash Fire', 'Well-Baked Body')) ||
-        (move.hasType('Water') && defender.hasAbility('Dry Skin', 'Storm Drain', 'Water Absorb')) ||
+        (move.hasType('Water') && defender.hasAbility('Dry Skin', 'Storm Drain', 'Water Absorb', 'Lava Shell')) ||
         (move.hasType('Electric') &&
             defender.hasAbility('Lightning Rod', 'Motor Drive', 'Volt Absorb')) ||
         (move.hasType('Ground') &&

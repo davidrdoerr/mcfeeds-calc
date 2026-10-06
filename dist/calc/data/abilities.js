@@ -357,6 +357,11 @@ var SV = SS.concat([
     'Wind Power',
     'Wind Rider',
     'Zero to Hero',
+    'Wind Power',
+    'Wind Rider',
+    'Zero to Hero',
+    'Webbed Siphon',
+    'Lava Shell',
 ]);
 exports.ABILITIES = [[], RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV];
 var Abilities = (function () {

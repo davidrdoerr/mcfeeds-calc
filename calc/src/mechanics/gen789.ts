@@ -250,27 +250,51 @@ export function calculateSMSSSV(
     attacker.hasAbility('Scrappy') || field.defenderSide.isForesight;
   const isRingTarget =
     defender.hasItem('Ring Target') && !defender.hasAbility('Klutz');
-  const type1Effectiveness = getMoveEffectiveness(
+ 
+  let type1Effectiveness = getMoveEffectiveness(
+  gen,
+  move,
+  defender.types[0],
+  isGhostRevealed,
+  field.isGravity,
+  isRingTarget
+);
+
+let type2Effectiveness = defender.types[1]
+  ? getMoveEffectiveness(
     gen,
     move,
-    defender.types[0],
+    defender.types[1],
     isGhostRevealed,
     field.isGravity,
     isRingTarget
-  );
-  const type2Effectiveness = defender.types[1]
-    ? getMoveEffectiveness(
-      gen,
-      move,
-      defender.types[1],
-      isGhostRevealed,
-      field.isGravity,
-      isRingTarget
-    )
-    : 1;
-  let typeEffectiveness = type1Effectiveness * type2Effectiveness;
+  )
+  : 1;
 
-  if (defender.teraType) {
+// McFeeds: Lava Shell makes Fire super effective against Water and Rock.
+if (attacker.hasAbility('Lava Shell') && move.hasType('Fire')) {
+  if (defender.types[0] === 'Water' || defender.types[0] === 'Rock') {
+    type1Effectiveness = 2;
+  }
+
+  if (
+    defender.types[1] === 'Water' ||
+    defender.types[1] === 'Rock'
+  ) {
+    type2Effectiveness = 2;
+  }
+}
+
+let typeEffectiveness = type1Effectiveness * type2Effectiveness;
+
+if (defender.teraType) {
+  if (
+    attacker.hasAbility('Lava Shell') &&
+    move.hasType('Fire') &&
+    (defender.teraType === 'Water' || defender.teraType === 'Rock')
+  ) {
+    typeEffectiveness = 2;
+  } else {
     typeEffectiveness = getMoveEffectiveness(
       gen,
       move,
@@ -280,6 +304,7 @@ export function calculateSMSSSV(
       isRingTarget
     );
   }
+}
 
   if (typeEffectiveness === 0 && move.hasType('Ground') &&
     defender.hasItem('Iron Ball') && !defender.hasAbility('Klutz')) {
@@ -323,7 +348,7 @@ export function calculateSMSSSV(
   if ((defender.hasAbility('Wonder Guard') && typeEffectiveness <= 1) ||
       (move.hasType('Grass') && defender.hasAbility('Sap Sipper')) ||
       (move.hasType('Fire') && defender.hasAbility('Flash Fire', 'Well-Baked Body')) ||
-      (move.hasType('Water') && defender.hasAbility('Dry Skin', 'Storm Drain', 'Water Absorb')) ||
+      (move.hasType('Water') && defender.hasAbility('Dry Skin', 'Storm Drain', 'Water Absorb', 'Lava Shell')) ||
       (move.hasType('Electric') &&
         defender.hasAbility('Lightning Rod', 'Motor Drive', 'Volt Absorb')) ||
       (move.hasType('Ground') &&
