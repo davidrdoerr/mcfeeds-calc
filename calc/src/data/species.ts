@@ -9776,13 +9776,14 @@ const MCFEEDS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     },
   },
 
-  Ariados: {
-    bs: {
-      hp: 80,
-      df: 80,
-      sd: 80,
-    },
+ Ariados: {
+  bs: {
+    hp: 80,
+    df: 80,
+    sd: 80,
   },
+  abilities: {0: 'Webbed Siphon'},
+},
 
   Meganium: {
     types: ['Grass', 'Fairy'],
@@ -9836,6 +9837,14 @@ const MCFEEDS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
       hp: 78,
     },
   },
+
+Magcargo: {
+  bs: {
+    sa: 100,
+  },
+  abilities: {0: 'Lava Shell'},
+},
+  
 };
 
 const SV: {[name: string]: SpeciesData} =
