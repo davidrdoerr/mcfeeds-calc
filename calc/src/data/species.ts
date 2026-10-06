@@ -9755,7 +9755,91 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   },
 };
 
-const SV: {[name: string]: SpeciesData} = extend(true, {}, SS, SV_PATCH, PLA_PATCH);
+
+const MCFEEDS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
+  Flygon: {
+    types: ['Bug', 'Dragon'],
+    bs: {
+      at: 105,
+      sa: 105,
+      sp: 105,
+    },
+    abilities: {0: 'Sand Force'},
+  },
+
+  Stoutland: {
+    types: ['Normal', 'Ground'],
+    bs: {
+      hp: 90,
+      at: 115,
+      sa: 40,
+    },
+  },
+
+  Ariados: {
+    bs: {
+      hp: 80,
+      df: 80,
+      sd: 80,
+    },
+  },
+
+  Meganium: {
+    types: ['Grass', 'Fairy'],
+    bs: {
+      df: 110,
+      sd: 110,
+      sp: 60,
+    },
+    abilities: {0: 'Triage'},
+  },
+
+  Tangrowth: {
+    abilities: {0: 'Seed Sower'},
+  },
+
+  Ampharos: {
+    bs: {
+      df: 90,
+      sd: 105,
+    },
+    abilities: {0: 'Dazzling'},
+  },
+
+  Ninetales: {
+    bs: {
+      at: 67,
+      sp: 109,
+    },
+  },
+
+  Blastoise: {
+    abilities: {0: 'Mega Launcher'},
+  },
+
+  Walrein: {
+    bs: {
+      hp: 120,
+      at: 90,
+      sp: 45,
+    },
+    abilities: {0: 'Intimidate'},
+  },
+
+  Typhlosion: {
+    types: ['Fire', 'Ground'],
+    abilities: {0: 'Solar Power'},
+  },
+
+  Gardevoir: {
+    bs: {
+      hp: 78,
+    },
+  },
+};
+
+const SV: {[name: string]: SpeciesData} =
+  extend(true, {}, SS, SV_PATCH, PLA_PATCH, MCFEEDS_PATCH);
 
 export const SPECIES = [{}, RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV];
 

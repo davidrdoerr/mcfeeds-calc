@@ -1097,10 +1097,10 @@ TR_NAMES = get_trainer_names()
 
 $(".gen").change(function () {
 	/*eslint-disable */
-	gen = ~~$(this).val() || 8;
+	gen = ~~$(this).val() || 9;
 	GENERATION = calc.Generations.get(gen);
 	var params = new URLSearchParams(window.location.search);
-	if (gen === 8) {
+	if (gen === 9) {
 		params.delete('gen');
 		params = '' + params;
 		if (window.history && window.history.replaceState) {
@@ -2049,7 +2049,7 @@ function onClickScreenCalc(){
 window.AUTO_REFRESH = false;
 $(document).ready(function () {
 	var params = new URLSearchParams(window.location.search);
-	var g = GENERATION[params.get('gen')] || 8;
+	var g = ~~params.get('gen') || 9;
 	$("#gen" + g).prop("checked", true);
 	$("#gen" + g).change();
 	$("#percentage").prop("checked", true);
